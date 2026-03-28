@@ -1,14 +1,14 @@
 # GSoC 2026 Application
-## The Mifos Initiative
+## The Mifos Initiative - Mifos X Smart Contract & Loan Agreement Summarization with LLMs
 **Applicant:** Wanjing Yang | wanjingyang29@gmail.com
 **Slack:** Wanjing Yang 
-**Timezone:** PST (UTC-8)
+**Timezone:** PST (UTC-7)
 **GitHub:** https://github.com/Niuniu-Li-229/2026-GSoC-Mifos
 
 ---
 
 ### 1. Project idea:
- Mifos X Smart Contract & Loan Agreement Summarization with LLMs (Medium, 175 hours)
+Mifos X Smart Contract & Loan Agreement Summarization with LLMs (Medium, 175 hours)
 
 ---
 
@@ -72,7 +72,7 @@ Master of Science in Computer Science (CS Align program), Khoury College of Comp
 - Email: wanjingyang29@gmail.com
 - Slack: Wanjing Yang — preferred for day-to-day communication
 - LinkedIn: linkedin.com/in/wyang37
-- Timezone: PST (UTC-8)
+- Timezone: PST (UTC-7)
 
 ---
 
