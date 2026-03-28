@@ -1,63 +1,66 @@
 # GSoC 2026 Application
-## The Mifos Initiative - Mifos X Smart Contract & Loan Agreement Summarization with LLMs
+## The Mifos Initiative - Intelligent Loan Amortisation & What-if Simulator Servic
 **Applicant:** Wanjing Yang | wanjingyang29@gmail.com
 **Slack:** Wanjing Yang 
 **Timezone:** PST (UTC-7)
-**GitHub:** https://github.com/Niuniu-Li-229/2026-GSoC-Mifos
+**GitHub:** https://github.com/Niuniu-Li-229/2026-GSoC-Mifos/tree/main/Loan%20Simulator
 
 ---
 
 ### 1. Project idea:
-Mifos X Smart Contract & Loan Agreement Summarization with LLMs (Medium, 175 hours)
+Intelligent Loan Amortisation & What-if Simulator Servic (Small, 90 hours)
 
 ---
 
 ### 2. Briefly cover what you expect to complete in this project and when, including a detailed description and project plan:
 
-Loan agreements in microfinance are often written in dense legal language that is inaccessible to low-literacy borrowers — creating real over-indebtedness risk at the point of loan origination. This project builds a proof-of-concept Python service that uses an LLM to automatically generate plain-language summaries of loan agreements, making key terms transparent and understandable for clients.
+Loan officers and clients often need to understand how different loan structures affect repayment — but currently there is no standalone, API-accessible simulation tool in the Mifos ecosystem. This project builds a lightweight Python microservice that provides accurate loan amortization calculations and interactive "what-if" scenario analysis, exposed via a clean REST API that can be called from the Mifos X web app or mobile apps.
 
 **What I will build:**
-- A lightweight **Streamlit web interface** where a loan officer can paste or upload a loan agreement or select a Mifos X product template
-- A **Python/FastAPI backend service** that sends the agreement text to an LLM (OpenAI GPT-4o, Claude, or Ollama for on-premise) with a carefully engineered prompt
-- Prompts designed to extract and explain six key fields: loan amount, interest rate and type (flat vs. declining balance), repayment schedule, total cost of credit, late fee structure, and consequences of default
-- **SMS/WhatsApp-formatted output** for easy sharing in the field
-- A **systematic evaluation** comparing multiple LLMs and prompts on accuracy, completeness, and readability — with a final recommendation report
-- A **REST API endpoint** (`POST /summarize`) for future integration into Mifos X web or mobile apps
-- Some **research** if time allowed: previous research have shown improvement of the AI summarization with RAG, Multi-agent etc, if sophiscated prompt engineering is not enough, try to explore RAG/Multi-agent way to improve.
+- A **core calculation engine** in Python implementing all repayment methods supported by Mifos X: flat rate, declining balance, and equal principal payment schedules. All monetary calculations will use Python's (`decimal`) module for precision - floating point errors are unacceptable in financial software.
+- **What-if scenario support** for prepayment, missed payments, interest rate changes (e.g. loan restructuring), and moratorium periods - returning updated amortization schedules and revised totals.
+- A **FastAPI REST service** exposing a clean APT that accepts loan parameters and returns detailed amortization tables, period-by-period principal/interest breakdowns, and summary totals.
+- A **Mifos X integration endpoint** that fetches live loan details from Mifos X via its API, allowing loan officers to run simulations directly on existing loans (e.g. "what if we restructure this loan with a 2-month moratorium?").
+- Full **API documentation** via FastAPI's built-in OpenAPI/Swagger interface, plus a Python client SDK for easy integration by other Mifos developers.
+
+**What-if Scenario Supported:**
+| Scenario | Description |
+|---|---|
+| Prepayment        |  Client pays extra; recalculate remaining schedule |
+| Missed Payment    |  Simulate arrears accumulation and revised payoffs |
+| Rate change       |  Restructing with new interest rate from period N  |
+| Suspension        |  Grace period with interest-only or full deferral  |
+| Tenure extension  |  Reduce each payments by extending loan term       |
 
 **Project Plan:**
 
 | Period | Deliverables |
 |---|---|
-| Community bonding (May 1–26) | Set up Mifos X locally, collect sample loan agreements for evaluation, finalize prompt strategy with mentors |
-| Weeks 1–2 (May 27–June 9) | Streamlit UI, text parsing, OpenAI + Anthropic API integration |
-| Weeks 3–4 (June 10–23) | Core prompting service, structured JSON output, initial testing |
-| Weeks 5–6 (June 24–July 7) | Ollama local inference integration, begin LLM comparison |
-| Weeks 7–8 (July 8–21) | SMS/WhatsApp formatter, multilingual exploration, midterm deliverables |
-| Weeks 9–10 (July 22–Aug 4) | Research phase: evaluate prompt engineering ceiling; explore RAG pipeline and/or multi-agent verification if needed; document findings | 
-| Weeks 11–12 (Aug 5–18) | Full evaluation across models and prompt variants, and reseach approaces; REST API finalization |
-| Week 13 (Aug 19–26) | Documentation, error handling polish, final report, demo, submission |
+| Community bonding (May 1–26) | Study Mifos X loan product configurations, confirm supported repayment methods with mentors, set up repo and local environment |
+| Weeks 1–2 (May 27–June 9) | Core calculation engine: flat rate, declining balance, equal principal; unit tests for all methods using (`decimal`) arithmetic |
+| Weeks 3–4 (June 10–23) | What-if scenario engine; FastAPI endpoints (`POST /amortize, POST /simulate`); OpenAPI documentation |
+| Weeks 5–6 (June 24–July 7) | Mifos X live loan integration (optional endpoint); Python client SDK; final testing and documentation |
+| Weeks 7–8 (July 8–14) | Code cleanup, final documentation, GSoC report, demo |
 
 ---
 
 ### 3. Any resources you will need to undertake the project:
 
-- OpenAI API access — already have an active account
-- Anthropic (Claude) API access — already have an active account
-- Ollama for local model inference — free, runs locally, no cost
-- No VMs required; all development will run locally or on free-tier cloud
+- Local Python environment — no cost
+- Mifos X demo environment (sandbox.mifos.community) for testing the live loan integration endpoint
+- No VMs or paid AI APIs required for this project
 
 ---
 
 ### 4. Why are you the right person for this project?
 
-Most applicants will need to learn what loan agreements contain and what matters to borrowers. I already know this from years of professional practice.
+Loan amortization is not an abstract concept for me and I have done the work professionally. At IFC (World Bank Group), I built and maintained financial projection models that included loan portfolio modeling, interest calculation under different methodologies, and scenario analysis for capital adequacy purposes. At Citigroup, I automated risk reporting pipelines in Python and SQL.
 
-At IFC (World Bank Group), I spent two years reading, modeling, and summarizing complex financial risk documents for non-specialist audiences — capital adequacy reports, stress test results, risk disclosures. Writing clear summaries of dense financial documents for senior management is directly the skill this project requires at a prompt engineering level.
+Specifically relevant to this project:
 
-I have used Python professionally for data pipelines and reporting automation at Citigroup, and I have immediate access to both OpenAI and Anthropic APIs. I can begin substantive work on the evaluation framework from day one.
-
-Working at IFC also gave me direct exposure to the financial inclusion challenge Mifos is solving. I have seen how inaccessible financial language creates real barriers for underserved borrowers, which makes this project personally meaningful beyond the technical challenge.
+- I have built declining-balance and flat-rate models in Excel and Python for production use at IFC. I understand the edge cases: how rounding accumulates across a schedule, how a moratorium affects total interest, why floating-point arithmetic produces incorrect results in financial calculations and must be replaced with decimal. 
+- I have direct experience with the "what-if" use case. At IFC, I ran restructuring scenarios for management: what happens to capital ratios if a portfolio of loans is rescheduled? That analytical instinct transfers directly to designing the scenario simulation feature.
+- I hold an FRM certification, which required deep study of fixed income mathematics and loan pricing which are the theoretical foundation underlying this project.
 
 ---
 
@@ -84,7 +87,7 @@ I am transitioning from financial risk management into software engineering and 
 
 ### 8. Links to source code or websites:
 
-GitHub: https://github.com/Niuniu-Li-229/2026-GSoC-Mifos
+GitHub: https://github.com/Niuniu-Li-229/2026-GSoC-Mifos/tree/main/Loan%20Simulator
 
 ---
 
@@ -122,7 +125,7 @@ Full-time GSoC commitment. I am enrolled in the NEU CS Align program and may tak
 
 ### 14. Which Mifos open source projects have you deployed?
 
-- **Mifos X:** In progress — currently setting up local development environment following the Getting Started Guide. [Update with screenshot before submitting]
+- **Mifos X:** In progress — currently setting up local development environment following the Getting Started Guide. Will update the screenshot before final submission.
 - Payment Hub EE: N/A
 - Mifos Gazelle: N/A
 - Mobile Applications: N/A
