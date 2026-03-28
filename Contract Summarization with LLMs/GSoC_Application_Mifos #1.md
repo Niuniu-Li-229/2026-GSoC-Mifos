@@ -3,7 +3,7 @@
 **Applicant:** Wanjing Yang | wanjingyang29@gmail.com
 **Slack:** Wanjing Yang 
 **Timezone:** PST (UTC-7)
-**GitHub:** https://github.com/Niuniu-Li-229/2026-GSoC-Mifos
+**GitHub:** https://github.com/Niuniu-Li-229/2026-GSoC-Mifos/tree/main/Contract%20Summarization%20with%20LLMs
 
 ---
 
@@ -84,7 +84,7 @@ I am transitioning from financial risk management into software engineering and 
 
 ### 8. Links to source code or websites:
 
-GitHub: https://github.com/Niuniu-Li-229/2026-GSoC-Mifos
+GitHub: https://github.com/Niuniu-Li-229/2026-GSoC-Mifos/tree/main/Contract%20Summarization%20with%20LLMs
 
 ---
 
@@ -122,7 +122,7 @@ Full-time GSoC commitment. I am enrolled in the NEU CS Align program and may tak
 
 ### 14. Which Mifos open source projects have you deployed?
 
-- **Mifos X:** In progress — currently setting up local development environment following the Getting Started Guide. [Update with screenshot before submitting]
+- **Mifos X:** In progress — currently setting up local development environment following the Getting Started Guide. Will update the screenshot before final submission.
 - Payment Hub EE: N/A
 - Mifos Gazelle: N/A
 - Mobile Applications: N/A
