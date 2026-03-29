@@ -23,7 +23,7 @@ Loan agreements in microfinance are often written in dense legal language that i
 - **SMS/WhatsApp-formatted output** for easy sharing in the field
 - A **systematic evaluation** comparing multiple LLMs and prompts on accuracy, completeness, and readability — with a final recommendation report
 - A **REST API endpoint** (`POST /summarize`) for future integration into Mifos X web or mobile apps
-- Some **research** if time allowed: previous research have shown improvement of the AI summarization with RAG, Multi-agent etc, if sophiscated prompt engineering is not enough, try to explore RAG/Multi-agent way to improve.
+- **Research Phase**: previous research have shown improvement of the AI summarization with RAG, Multi-agent etc, if sophiscated prompt engineering is not enough, try to explore RAG/Multi-agent way to improve.
 
 **Project Plan:**
 
@@ -38,6 +38,9 @@ Loan agreements in microfinance are often written in dense legal language that i
 | Weeks 11–12 (Aug 5–18) | Full evaluation across models and prompt variants, and reseach approaces; REST API finalization |
 | Week 13 (Aug 19–26) | Documentation, error handling polish, final report, demo, submission |
 
+**Research Reference**
+- Research Papers: https://github.com/Niuniu-Li-229/2026-GSoC-Mifos/tree/main/Contract%20Summarization%20with%20LLMs/Research%20Papers
+
 ---
 
 ### 3. Any resources you will need to undertake the project:
@@ -45,7 +48,6 @@ Loan agreements in microfinance are often written in dense legal language that i
 - OpenAI API access — already have an active account
 - Anthropic (Claude) API access — already have an active account
 - Ollama for local model inference — free, runs locally, no cost
-- No VMs required; all development will run locally or on free-tier cloud
 
 ---
 

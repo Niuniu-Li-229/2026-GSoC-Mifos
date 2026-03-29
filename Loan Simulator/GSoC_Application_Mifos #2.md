@@ -42,13 +42,18 @@ Loan officers and clients often need to understand how different loan structures
 | Weeks 5–6 (June 24–July 7) | Mifos X live loan integration (optional endpoint); Python client SDK; final testing and documentation |
 | Weeks 7–8 (July 8–14) | Code cleanup, final documentation, GSoC report, demo |
 
+
+**Reference**
+- Amotization visualizer reference: https://lifegic.com/amortization-chart-calculator/
+- Understanding amortized loans and how to calculate: https://www.chase.com/personal/mortgage/education/financing-a-home/loan-amortization
+
+
 ---
 
 ### 3. Any resources you will need to undertake the project:
 
 - Local Python environment — no cost
 - Mifos X demo environment (sandbox.mifos.community) for testing the live loan integration endpoint
-- No VMs or paid AI APIs required for this project
 
 ---
 
