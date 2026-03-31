@@ -48,7 +48,7 @@ A Python-based LLM summarization service embedded into the Mifos X workflow that
 The system has four layers:
 - **Input layer** - Streamlit UI where a loan officer pastes or uploads a loan agreement, or selects a Mifos X product template.
 - **LLM router** - selects the appropriate model based on the institution's deployment preference (could vs. on-premise). The chosen model executes all three prompt stages.
-- **Three-stage prompt pipeline** (all all executed by the chosen LLM):
+- **Three-stage prompt pipeline** (all executed by the chosen LLM):
   - Stage 1 — Extract: pull six key fields from the agreement (loan amount, interest rate and type, repayment schedule, total cost of credit, late fees, default consequences)
   - Stage 2 — Simplify: rewrite extracted content at a low-literacy reading level, using concrete examples
   - Stage 3 — Structure: return a validated JSON object for consistent downstream handling
@@ -211,7 +211,7 @@ Wanjing Yang — introduced myself in #wg-ai-for-all and received a personal res
 
 ## 10. Contributions to other open source projects outside of Mifos:
 
-No prior open source contributions. This is my first cycle. I am actively working to make my first contribution to the relevant Mifos repository before the deadline.
+No prior open source contributions. This is my first cycle. I have built a local prototype at github.com/Niuniu-Li-229/2026-GSoC-Mifos and will submit my first formal PR to the community-ai repository during the community bonding period.
 
 ---
 
@@ -237,7 +237,7 @@ Full-time GSoC commitment. I am enrolled in the NEU CS Align program and may tak
 
 ## 14. Which Mifos open source projects have you deployed?
 
-- **Mifos X:** In progress — currently setting up local development environment following the Getting Started Guide. Will update the screenshot before final submission.
+- **Mifos X:** In progress — currently setting up local development environment following the Getting Started Guide.
 - Payment Hub EE: N/A
 - Mifos Gazelle: N/A
 - Mobile Applications: N/A
@@ -246,13 +246,15 @@ Full-time GSoC commitment. I am enrolled in the NEU CS Align program and may tak
 
 ## 15. Detail how you installed them and provide a screenshot:
 
-Currently setting up Mifos X locally using Docker following the Apache Fineract Getting Started Guide. Will include screenshot of running environment before final submission.
+Deployed Apache Fineract and MySQL 8.0 via Docker on macOS Apple Silicon. Encountered a database connection issue (Fineract connecting to localhost instead of the MySQL container hostname). Will resolve during community bonding period. Screenshot shows Docker containers from the deployment attempt.
+
+![Fineract Docker setup](https://raw.githubusercontent.com/Niuniu-Li-229/2026-GSoC-Mifos/main/Mifos%20X%20Setup/Mifos%20X%20Setup.png)
 
 ---
 
 ## 16. Patches or source code submitted to Mifos Projects:
 
-No submissions yet. I am actively working on a first contribution to the community-ai repository, which is directly relevant to this proposal. I will update this before the March 31 deadline.
+No prior submissions. During proposal preparation I built a local prototype of the LLM summarization pipeline (available at github.com/Niuniu-Li-229/2026-GSoC-Mifos) and explored the community-ai repository codebase to understand the existing AI tooling. I plan to submit my first formal PR during the community bonding period, building directly on this prototype.
 
 ---
 
